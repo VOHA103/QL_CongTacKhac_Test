@@ -1,0 +1,41 @@
+<article class="container">
+ 
+ <div class="flex mt-10">
+    <mat-card class="w-full">
+      <section class="sys_cau_hinh_admins" *ngIf="!isCreate">
+        <table class="table table_admin">
+          <thead>
+            <tr>
+              <th class=" text-base" style="width: 5%; height: 60px"> Tiêu đề</th>
+              <th class=" text-base" style="width: 5%; height: 60px"> Hình đại diện </th>
+              <th class=" text-base" style="width: 5%; height: 60px">Copyright</th>
+              <th class=" text-base" style="width: 5%; height: 60px">Powered</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let sys_cau_hinh_admin_ of sys_cau_hinh_admins">
+              <td>{{sys_cau_hinh_admin_.title}}</td>
+              <td class="">
+                <img [src]="createImgPath(sys_cau_hinh_admin_.image)" alt="profile picture"
+                  style="width:60px; height:60px;">
+              </td>
+              <td>{{sys_cau_hinh_admin_.name_footer}}</td>
+              <td>{{sys_cau_hinh_admin_.title_footer}}</td>
+            </tr>
+          </tbody>
+        </table>
+
+   
+      </section>
+      <div class="flex justify-end mt-5">
+        <div class="flex justify-end mr-10">
+          <button type="button" class="btn btn-primary" (click)="returnToCreate()">Thêm</button>
+
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</article> 
+
+
+
